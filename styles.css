@@ -1,85 +1,181 @@
 * {
-    padding: 0;
-    margin: 0;
-    vertical-align: baseline;
-    text-decoration: none;
-    list-style: none;
-    border: 0
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
 }
-html, html a {
-    -webkit-font-smoothing: antialiased;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+html,
+html a {
+  -webkit-font-smoothing: antialiased;
+  color: white;
 }
 
 body {
-    -webkit-font-smoothing: antialiased;
-    /* só funciona em browser webkit: chrome, safari. Deixa a letra mais suave */
-    font-family: 'Roboto Mono', monospace;
-    margin-left: auto;
-    margin-right: auto;
-    display: grid;
-    text-align: center;
-    background-color: white;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Roboto Mono", monospace;
+  text-align: center;
+  background-color: white;
 }
 
-:root{
-    --primary-color: #e4ce25;
+:root {
+  --primary-color: #e4ce25;
 }
 
-nav{
-    display: flex;
-    position: fixed;
-    padding: 30px;
-    left: 0;
-    
-    justify-content: right;
-    
-    width: 100%;
-    background-color: var(--primary-color);
+nav {
+  display: flex;
+  position: fixed;
+  padding: 30px;
+  justify-content: right;
+
+  width: 100%;
 }
 
-a{
-    color: white;
+nav .links-bar {
+  margin-right: 10rem;
 }
 
-nav .links-bar{
-    flex-direction: row;
-    margin-right: 10rem;
-    height: 100%;
+nav .links-bar a {
+  padding: 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #1f1f1f;
+  transition: 1s;
 }
 
-nav .links-bar a{
-    color: white;
-    background-color: black;
+nav .links-bar a:hover {
+  background-color: #bd7474;
+}
+#welcome-section {
+  padding: 25%;
+  background-image: radial-gradient(
+    circle at 74.57% 7.45%,
+    #785362 0,
+    #6e4e58 8.33%,
+    #63494e 16.67%,
+    #564345 25%,
+    #483d3d 33.33%,
+    #383635 41.67%,
+    #272e2f 50%,
+    #15262a 58.33%,
+    #001f26 66.67%,
+    #001923 75%,
+    #001221 83.33%,
+    #000920 91.67%,
+    #00001f 100%
+  );
+  color: var(--primary-color);
+  font-size: 34px;
 }
 
-span {
-    position: fixed;
-    display: flex;
-    width: 100%;
-    
-    margin-top: 79px;
-    height: 3px;
-    background-color: black;
+#projects {
+  display: flex;
+  flex-direction: column;
+  padding: 10%;
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    #002749 0,
+    #002649 12.5%,
+    #002549 25%,
+    #002449 37.5%,
+    #0d2248 50%,
+    #182047 62.5%,
+    #211e45 75%,
+    #271d42 87.5%,
+    #2d1b40 100%
+  );
 }
 
-#welcome-section{
-    padding: 25%;
-    background-image: radial-gradient(circle at 74.57% 7.45%, #785362 0, #6e4e58 8.33%, #63494e 16.67%, #564345 25%, #483d3d 33.33%, #383635 41.67%, #272e2f 50%, #15262a 58.33%, #001f26 66.67%, #001923 75%, #001221 83.33%, #000920 91.67%, #00001f 100%);;
-    color: var(--primary-color);
-    font-size: 34px;
+a.show-all {
+  margin-top: 50px;
+  background-color: #1f1f1f;
+  font-size: 18px;
+
+  border: none;
+  border-radius: 8px;
+  padding: 30px;
+  transition: 1s;
+}
+a.show-all:hover {
+  background-color: #bd7474;
 }
 
-#projects{
-    padding: 25%;
-    background-image: radial-gradient(circle at 11.43% 17.64%, #31529f 0, #113570 50%, #001a44 100%);
+.projects-section-header {
+  margin: 0 auto 6rem auto;
+  width: 720px;
+  font-size: 34px;
 }
 
-#contact{
-    padding: 25%;
-    background-color: aquamarine;
+.grid-template {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 3rem;
+  grid-row-gap: 3rem;
 }
 
-footer{
-    padding: 40px;
+#projects img {
+  padding: 0;
+  width: 100%;
+  height: 475px;
+}
+
+.project-tile {
+  background-color: #1f1f1f;
+  padding: 10px;
+  padding-bottom: 20px;
+  text-align: center;
+
+  box-shadow: inset;
+  font-size: 18px;
+  transition: 1s;
+}
+.project-tile p {
+  margin-top: 15px;
+}
+
+.project-tile:hover {
+  background-color: #bd7474;
+}
+
+#contact {
+  color: black;
+  padding: 25%;
+  background-color: aquamarine;
+}
+
+#contact img {
+  width: 100px;
+  height: 100px;
+}
+
+#contact header {
+  margin: 0 auto 6rem auto;
+  width: 720px;
+  font-size: 34px;
+}
+
+.container-contacts {
+  display: flex;
+  justify-content: center;
+}
+
+.contacts {
+  margin-right: 50px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.contacts a {
+  color: black;
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+
+  padding: 40px;
+  background-color: #1f1f1f;
+
+  border: none;
+  border-top: solid #1f1f1f 3px;
 }
