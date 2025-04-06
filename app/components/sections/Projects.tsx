@@ -2,40 +2,44 @@
 
 import { motion } from 'framer-motion';
 import { Code, ExternalLink, Github } from 'lucide-react';
+import Image from 'next/image';
 
 export function ProjectsSection() {
   const projects = [
     {
-      title: "Sistema de Dashboard",
-      description: "Painel administrativo com métricas em tempo real construído com Next.js e Tailwind CSS",
-      tags: ["Next.js", "Tailwind", "Node.js"],
-      link: "#",
-      repo: "#"
+      title: "Batuque",
+      description: "Simulador de bateria virtual em realidade aumentada construído com Python, openCV e outras bibliotecas. Além disso, fui responsável por desenvolver a página da startup, feita em Vue.js.",
+      tags: ["Python", "Tensorflow", "Postgres", "Vue.js", "git", "docker"],
+      link: "https://batuqueofc.netlify.app/",
+      repo: "https://github.com/hellsinho/Batuque",
+      image: "/images/batuque.jpg" // Caminho relativo a partir da pasta public
     },
     {
-      title: "E-commerce Customizado",
-      description: "Loja virtual com integração de pagamentos e carrinho de compras",
-      tags: ["React", "Stripe", "MongoDB"],
-      link: "#",
-      repo: "#"
+      title: "InSignIA",
+      description: "Aplicativo mobile de tradução em tempo real da Língua de Sinais Brasileira para português. Fui responsável por desenvolver o modelo de leitura de sinais e pela construção da página da aplicação.",
+      tags: ["Python", "Next.js", "Flutter", "git"],
+      link: "https://insigniaofc.netlify.app/",
+      repo: "https://github.com/hellsinho/InSignIA",
+      image: "/images/insignia.png"
     },
     {
-      title: "Aplicação de Visão Computacional",
-      description: "Sistema de análise de imagens utilizando Python e OpenCV",
-      tags: ["Python", "OpenCV", "Numpy"],
+      title: "AstroChat",
+      description: "Sistema de criação de mapa astral e tarot utilizando IA.",
+      tags: ["Next.js", "n8n", "IA", "git", "github"],
       link: "#",
-      repo: "#"
+      repo: "https://github.com/hellsinho/Astro",
+      image: "/images/astro.png"
     }
   ];
 
   return (
     <section id="projects" className="min-h-screen relative overflow-hidden py-20 px-4 flex items-center">
-      {/* Efeito de fundo */}
+      {/* Efeito de fundo (mantido igual) */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-purple-900/5 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-blue-900/5 to-transparent"></div>
         
-        {/* Efeito de partículas */}
+        {/* Efeito de partículas (mantido igual) */}
         {[...Array(15)].map((_, i) => (
           <motion.div
             key={i}
@@ -89,11 +93,16 @@ export function ProjectsSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300"
             >
-              {/* Placeholder da imagem do projeto */}
-              <div className="h-48 bg-gradient-to-br from-purple-900/30 to-blue-900/30 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Code className="h-12 w-12 text-gray-400 opacity-30" />
-                </div>
+              {/* Imagem do projeto */}
+              <div className="h-48 relative">
+                <Image
+                  src={project.image}
+                  alt={`Captura de tela do projeto ${project.title}`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={index < 2} // Prioriza o carregamento das primeiras imagens
+                />
               </div>
 
               <div className="p-6">
@@ -139,7 +148,7 @@ export function ProjectsSection() {
           ))}
         </div>
 
-        {/* Call to Action */}
+        {/* Call to Action (mantido igual) */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

@@ -12,7 +12,7 @@ export function ContactSection() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -22,19 +22,40 @@ export function ContactSection() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulação de envio
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormData({ name: '', email: '', message: '' });
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        
+        // Resetar mensagem de sucesso após 5 segundos
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      } else {
+        throw new Error(data.error || 'Falha no envio');
+      }
+    } catch (error) {
+      console.error('Erro ao enviar mensagem:', error);
+      setSubmitStatus('error');
       
-      // Resetar mensagem de sucesso após 5 segundos
-      setTimeout(() => setSubmitSuccess(false), 5000);
-    }, 1500);
+      // Resetar mensagem de erro após 5 segundos
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -99,13 +120,24 @@ export function ContactSection() {
           >
             <h3 className="text-2xl font-semibold text-white mb-6">Envie uma mensagem</h3>
             
-            {submitSuccess && (
+            {/* Mensagens de status */}
+            {submitStatus === 'success' && (
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="mb-6 p-4 bg-green-900/30 border border-green-700 rounded-lg text-green-300"
               >
                 Mensagem enviada com sucesso! Entrarei em contato em breve.
+              </motion.div>
+            )}
+            
+            {submitStatus === 'error' && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-6 p-4 bg-red-900/30 border border-red-700 rounded-lg text-red-300"
+              >
+                Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde ou me contate diretamente por e-mail/telefone.
               </motion.div>
             )}
 
@@ -202,7 +234,7 @@ export function ContactSection() {
                   <div>
                     <h4 className="text-lg font-medium text-gray-300">Email</h4>
                     <a 
-                      href="helson.santos25@gmail.com" 
+                      href="mailto:helson.santos25@gmail.com" 
                       className="text-blue-400 hover:text-blue-300 transition"
                     >
                       helson.santos25@gmail.com

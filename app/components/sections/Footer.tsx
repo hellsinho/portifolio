@@ -107,7 +107,7 @@ export function Footer() {
             </h3>
             <div className="flex space-x-4">
               <a 
-                href="https://github.com/seuusuario" 
+                href="https://github.com/hellsinho" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-gray-800 rounded-full text-gray-400 hover:text-white hover:bg-gray-700 transition"
@@ -116,7 +116,7 @@ export function Footer() {
                 <Github size={20} />
               </a>
               <a 
-                href="https://linkedin.com/in/seuusuario" 
+                href="https://www.linkedin.com/in/helsongoncalves/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-gray-800 rounded-full text-gray-400 hover:text-white hover:bg-gray-700 transition"
@@ -125,7 +125,7 @@ export function Footer() {
                 <Linkedin size={20} />
               </a>
               <a 
-                href="mailto:seuemail@exemplo.com" 
+                href="mailto:helson.santos25@gmail.com" 
                 className="p-2 bg-gray-800 rounded-full text-gray-400 hover:text-white hover:bg-gray-700 transition"
                 aria-label="Email"
               >
