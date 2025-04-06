@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useAnimation, useMotionValue } from 'framer-motion';
+import { motion, useMotionValue } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
 const techStacks = [
@@ -17,12 +17,9 @@ const techStacks = [
 ];
 
 export function AboutSection() {
-  const controls = useAnimation();
   const sliderRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const duplicatedStacks = [...techStacks, ...techStacks];
-  const animationRef = useRef<number>;
-  const lastTimeRef = useRef<number>(0);
   const speed = 50; // pixels por segundo
   const isPausedRef = useRef(false);
 
