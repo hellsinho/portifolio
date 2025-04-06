@@ -84,7 +84,7 @@ export function AboutSection() {
       <div className="max-w-6xl mx-auto w-full mb-16">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Conteúdo Textual (mantido igual) */}
-          <div className="space-y-8">
+          <div className="space-y-8 px-4">
             <h2 className="text-4xl font-bold">
               <span className="bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
                 Formação & 

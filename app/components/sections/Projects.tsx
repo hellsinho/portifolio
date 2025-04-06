@@ -3,8 +3,10 @@
 import { motion } from 'framer-motion';
 import { Code, ExternalLink, Github } from 'lucide-react';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 export function ProjectsSection() {
+  const [isClient, setIsClient] = useState(false);
   const projects = [
     {
       title: "Batuque",
@@ -12,7 +14,7 @@ export function ProjectsSection() {
       tags: ["Python", "Tensorflow", "Postgres", "Vue.js", "git", "docker"],
       link: "https://batuqueofc.netlify.app/",
       repo: "https://github.com/hellsinho/Batuque",
-      image: "/images/batuque.jpg" // Caminho relativo a partir da pasta public
+      image: "/images/batuque.jpg"
     },
     {
       title: "InSignIA",
@@ -32,36 +34,47 @@ export function ProjectsSection() {
     }
   ];
 
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <section id="projects" className="min-h-screen relative overflow-hidden py-20 px-4 flex items-center">
-      {/* Efeito de fundo (mantido igual) */}
+      {/* Efeito de fundo */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-purple-900/5 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-blue-900/5 to-transparent"></div>
         
-        {/* Efeito de partículas (mantido igual) */}
-        {[...Array(15)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-gradient-to-r from-purple-500/10 to-blue-500/10"
-            initial={{
-              x: Math.random() * 100,
-              y: Math.random() * 100,
-              width: Math.random() * 300 + 100,
-              height: Math.random() * 300 + 100,
-              opacity: 0.1
-            }}
-            animate={{
-              x: Math.random() * 100,
-              y: Math.random() * 100,
-              transition: {
-                duration: Math.random() * 20 + 20,
-                repeat: Infinity,
-                repeatType: 'reverse'
-              }
-            }}
-          />
-        ))}
+        {/* Efeito de partículas - agora apenas no client-side */}
+        {isClient && [...Array(15)].map((_, i) => {
+          const width = 100 + Math.random() * 200;
+          const height = 100 + Math.random() * 200;
+          const initialX = Math.random() * 100;
+          const initialY = Math.random() * 100;
+          
+          return (
+            <motion.div
+              key={i}
+              className="absolute rounded-full bg-gradient-to-r from-purple-500/10 to-blue-500/10"
+              initial={{
+                x: initialX,
+                y: initialY,
+                width,
+                height,
+                opacity: 0.1
+              }}
+              animate={{
+                x: Math.random() * 100,
+                y: Math.random() * 100,
+                transition: {
+                  duration: Math.random() * 20 + 20,
+                  repeat: Infinity,
+                  repeatType: 'reverse'
+                }
+              }}
+            />
+          );
+        })}
       </div>
 
       {/* Conteúdo */}
@@ -93,7 +106,6 @@ export function ProjectsSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300"
             >
-              {/* Imagem do projeto */}
               <div className="h-48 relative">
                 <Image
                   src={project.image}
@@ -101,7 +113,7 @@ export function ProjectsSection() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  priority={index < 2} // Prioriza o carregamento das primeiras imagens
+                  priority={index < 2}
                 />
               </div>
 
@@ -148,7 +160,6 @@ export function ProjectsSection() {
           ))}
         </div>
 
-        {/* Call to Action (mantido igual) */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
