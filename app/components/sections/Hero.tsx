@@ -16,30 +16,6 @@ export default function HeroSection() {
           {/* Efeito visual de fundo */}
           <div className="absolute -inset-8 rounded-full bg-gradient-to-tr from-purple-500 to-blue-600 opacity-20 blur-xl"></div>
           
-          {/* Efeito de partículas (opcional) */}
-          <div className="absolute inset-0 rounded-2xl overflow-hidden">
-            {[...Array(20)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute rounded-full bg-purple-400 opacity-10"
-                initial={{
-                  x: Math.random() * 100,
-                  y: Math.random() * 100,
-                  width: Math.random() * 10 + 5,
-                  height: Math.random() * 10 + 5,
-                }}
-                animate={{
-                  x: Math.random() * 100,
-                  y: Math.random() * 100,
-                  transition: {
-                    duration: Math.random() * 10 + 10,
-                    repeat: Infinity,
-                    repeatType: 'reverse'
-                  }
-                }}
-              />
-            ))}
-          </div>
 
           {/* Sua imagem - substitua pela sua foto */}
           <motion.div
