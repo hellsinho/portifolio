@@ -90,7 +90,10 @@ export function AboutSection() {
                 Formação & 
               </span>
               <br />
+              <span className="bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
               Experiência Profissional
+
+              </span>
             </h2>
 
             <div className="space-y-6">
@@ -103,7 +106,7 @@ export function AboutSection() {
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900">Engenharia da Computação</h3>
                   <p className="text-gray-600">UFRPE - Universidade Federal Rural de Pernambuco</p>
-                  <p className="text-gray-500 text-sm mt-1">Formação prevista: Dez/2024</p>
+                  <p className="text-gray-500 text-sm mt-1">Formação prevista: 2026</p>
                 </div>
               </div>
 
@@ -114,8 +117,19 @@ export function AboutSection() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900">Desenvolvedor Fullstack</h3>
-                  <p className="text-gray-600">Experiência com Java, React, Spring e Angular</p>
+                  <h3 className="text-xl font-semibold text-gray-900">Batuque - Desenvolvedor Fullstack</h3>
+                  <p className="text-gray-600">Python, Visão computacional, OpenCV, Tensorflow e Vue.js </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="mt-1 p-2 rounded-lg bg-gradient-to-br from-purple-100 to-blue-100">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900">InSignIA - Desenvolvedor Fullstack</h3>
+                  <p className="text-gray-600">Python, OpenCV, Tensorflow, Next.js e Typescript</p>
                 </div>
               </div>
             </div>
@@ -128,24 +142,24 @@ export function AboutSection() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="p-4 bg-white rounded-lg shadow-sm border border-gray-100">
                   <h4 className="font-medium flex items-center gap-2">
-                    <span className="bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">●</span>
-                    Análise de Dados
+                    <span className="bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">● Análise de Dados</span>
+      
                   </h4>
                   <p className="text-gray-600 text-sm mt-1">Python, Numpy, Pandas, Visão Computacional</p>
                 </div>
                 
                 <div className="p-4 bg-white rounded-lg shadow-sm border border-gray-100">
                   <h4 className="font-medium flex items-center gap-2">
-                    <span className="bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">●</span>
-                    Bancos de Dados
+                    <span className="bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">● Bancos de Dados</span>
+                
                   </h4>
                   <p className="text-gray-600 text-sm mt-1">PostgreSQL, MySQL, Supabase</p>
                 </div>
                 
                 <div className="p-4 bg-white rounded-lg shadow-sm border border-gray-100">
                   <h4 className="font-medium flex items-center gap-2">
-                    <span className="bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">●</span>
-                    Gestão de Projetos
+                    <span className="bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">● Gestão de Projetos</span>
+                    
                   </h4>
                   <p className="text-gray-600 text-sm mt-1">Scrum, Kanban, XP, Metodologias Ágeis</p>
                 </div>
