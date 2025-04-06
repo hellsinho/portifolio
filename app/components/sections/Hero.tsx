@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function HeroSection() {
@@ -54,24 +54,26 @@ export default function HeroSection() {
           </p>
           
           <div className="flex justify-end gap-4">
-            <motion.a
-              href="#projects"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 rounded-full font-medium bg-gradient-to-r from-purple-600 to-blue-500 text-white shadow-lg"
-            >
-              Ver Projetos
-            </motion.a>
-            
-            <motion.a
-              href="#contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 rounded-full font-medium border-2 border-gray-300 text-white hover:border-gray-400 transition"
-            >
-              Contato
-            </motion.a>
-          </div>
+          <motion.a
+            href="/documents/CV_helson.pdf"
+            download="CV_helson.pdf"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center gap-2 px-8 py-3 rounded-full font-medium bg-gradient-to-r from-purple-600 to-blue-500 text-white shadow-lg"
+          >
+            <Download size={18} className="inline-block" />
+            <span>Baixar CV</span>
+          </motion.a>
+          
+          <motion.a
+            href="#contact"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-3 rounded-full font-medium border-2 border-gray-300 text-white hover:border-gray-400 transition"
+          >
+            Contato
+          </motion.a>
+        </div>
         </motion.div>
       </div>
 
