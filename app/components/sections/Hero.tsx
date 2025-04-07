@@ -9,15 +9,11 @@ export default function HeroSection() {
       id="home" 
       className="min-h-screen flex items-center px-4 sm:px-8 relative overflow-hidden"
     >
-      {/* Container principal */}
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Área da imagem (esquerda) */}
         <div className="relative order-1 lg:order-none">
-          {/* Efeito visual de fundo */}
           <div className="absolute -inset-8 rounded-full bg-gradient-to-tr from-purple-500 to-blue-600 opacity-20 blur-xl"></div>
           
 
-          {/* Sua imagem - substitua pela sua foto */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -25,17 +21,16 @@ export default function HeroSection() {
             className="relative rounded-full overflow-hidden border-4 border-white shadow-2xl aspect-square"
           >
             <Image
-              src="/images/helson.jpeg" // Caminho relativo a partir da pasta public
+              src="/images/helson.jpeg"
               alt="Helson - Desenvolvedor Fullstack"
-              width={500} // Defina conforme necessário
-              height={500} // Mantenha a proporção
+              width={500} 
+              height={500}
               className="object-cover w-full h-full"
-              priority // Importante para imagens acima do fold
+              priority 
             />
           </motion.div>
         </div>
 
-        {/* Área do texto (direita) */}
         <motion.div 
           className="text-right"
           initial={{ opacity: 0, x: 20 }}
@@ -77,7 +72,6 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.a 
         href="#about"
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"

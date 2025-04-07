@@ -13,11 +13,9 @@ export function Footer() {
 
   return (
     <footer className="relative bg-gray-900 border-t border-gray-800 overflow-hidden">
-      {/* Efeitos de fundo */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-purple-900/5 to-transparent"></div>
         
-        {/* Efeito de partículas */}
         {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
@@ -42,10 +40,8 @@ export function Footer() {
         ))}
       </div>
 
-      {/* Conteúdo */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Sobre */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +59,6 @@ export function Footer() {
             </p>
           </motion.div>
 
-          {/* Links Rápidos */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -93,7 +88,6 @@ export function Footer() {
             </ul>
           </motion.div>
 
-          {/* Redes Sociais */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -135,10 +129,8 @@ export function Footer() {
           </motion.div>
         </div>
 
-        {/* Divisor */}
         <div className="border-t border-gray-800 my-8"></div>
 
-        {/* Rodapé inferior */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <motion.p
             initial={{ opacity: 0 }}

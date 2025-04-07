@@ -40,12 +40,10 @@ export function ProjectsSection() {
 
   return (
     <section id="projects" className="min-h-screen relative overflow-hidden py-20 px-4 flex items-center">
-      {/* Efeito de fundo */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-purple-900/5 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-blue-900/5 to-transparent"></div>
         
-        {/* Efeito de partículas - agora apenas no client-side */}
         {isClient && [...Array(15)].map((_, i) => {
           const width = 100 + Math.random() * 200;
           const height = 100 + Math.random() * 200;
@@ -77,7 +75,6 @@ export function ProjectsSection() {
         })}
       </div>
 
-      {/* Conteúdo */}
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

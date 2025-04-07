@@ -42,7 +42,6 @@ export function ContactSection() {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', message: '' });
         
-        // Resetar mensagem de sucesso após 5 segundos
         setTimeout(() => setSubmitStatus('idle'), 5000);
       } else {
         throw new Error(data.error || 'Falha no envio');
@@ -51,7 +50,6 @@ export function ContactSection() {
       console.error('Erro ao enviar mensagem:', error);
       setSubmitStatus('error');
       
-      // Resetar mensagem de erro após 5 segundos
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } finally {
       setIsSubmitting(false);
@@ -60,12 +58,10 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="min-h-screen relative overflow-hidden py-20 px-4 flex items-center bg-gray-900">
-      {/* Efeito de fundo */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-purple-900/10 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-blue-900/10 to-transparent"></div>
         
-        {/* Efeito de bolhas */}
         {[...Array(10)].map((_, i) => (
           <motion.div
             key={i}
@@ -90,7 +86,6 @@ export function ContactSection() {
         ))}
       </div>
 
-      {/* Conteúdo */}
       <div className="relative z-10 max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -110,7 +105,6 @@ export function ContactSection() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Formulário */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -120,7 +114,6 @@ export function ContactSection() {
           >
             <h3 className="text-2xl font-semibold text-white mb-6">Envie uma mensagem</h3>
             
-            {/* Mensagens de status */}
             {submitStatus === 'success' && (
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -215,7 +208,6 @@ export function ContactSection() {
             </form>
           </motion.div>
 
-          {/* Informações de Contato */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}

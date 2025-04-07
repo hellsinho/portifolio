@@ -4,9 +4,8 @@ import nodemailer from 'nodemailer';
 export async function POST(request: Request) {
   const { name, email, message } = await request.json();
 
-  // Configure o transporter do nodemailer
   const transporter = nodemailer.createTransport({
-    service: 'gmail', // ou outro serviço
+    service: 'gmail',
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASSWORD,
@@ -16,7 +15,7 @@ export async function POST(request: Request) {
   try {
     await transporter.sendMail({
       from: `"Formulário de Contato" <${process.env.EMAIL_USER}>`,
-      to: process.env.YOUR_EMAIL, // Seu e-mail
+      to: process.env.YOUR_EMAIL,
       subject: `Nova mensagem de ${name}`,
       html: `
         <h2>Nova mensagem do portfólio</h2>

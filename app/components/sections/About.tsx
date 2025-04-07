@@ -20,7 +20,7 @@ export function AboutSection() {
   const sliderRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const duplicatedStacks = [...techStacks, ...techStacks];
-  const speed = 50; // pixels por segundo
+  const speed = 50;
   const isPausedRef = useRef(false);
 
   useEffect(() => {
@@ -38,7 +38,6 @@ export function AboutSection() {
       if (!isPausedRef.current) {
         x.set(x.get() - (speed * deltaTime) / 1000);
         
-        // Reset position when scrolled too far
         if (x.get() < -techStacks.length * 200) {
           x.set(0);
         }
@@ -77,10 +76,8 @@ export function AboutSection() {
 
   return (
     <section id="about" className="min-h-screen py-24  flex flex-col justify-center bg-gray-50 relative overflow-hidden">
-      {/* Conteúdo Principal */}
       <div className="max-w-6xl mx-auto w-full mb-16">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Conteúdo Textual (mantido igual) */}
           <div className="space-y-8 px-4">
             <h2 className="text-4xl font-bold">
               <span className="bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
@@ -164,7 +161,6 @@ export function AboutSection() {
             </div>
           </div>
 
-          {/* Espaço para imagem/ilustração (opcional) */}
           <div className="hidden md:block">
             <div className="relative h-full min-h-[400px] flex items-center justify-center">
               <div className="absolute inset-0 overflow-hidden rounded-2xl">
@@ -180,7 +176,6 @@ export function AboutSection() {
         </div>
       </div>
 
-          {/* Slider Horizontal Infinito */}
           <div className="w-full overflow-hidden py-8 bg-gradient-to-r from-purple-50 to-blue-50">
 
         <div className="relative w-full h-24 overflow-hidden">
