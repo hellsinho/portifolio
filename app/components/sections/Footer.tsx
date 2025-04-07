@@ -147,7 +147,7 @@ export function Footer() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-gray-500 text-sm mb-4 md:mb-0"
           >
-            © {new Date().getFullYear()} Seu Nome. Todos os direitos reservados.
+            © {new Date().getFullYear()} Helson Gonçalves. Todos os direitos reservados.
           </motion.p>
 
           <motion.button
